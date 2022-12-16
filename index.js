@@ -4,8 +4,12 @@ var request = require('request').defaults({ encoding: null });
 const redisClient = redis.createClient(
     {
         socket: {
+
             port: 6379,
-            host: "127.0.0.1",
+            //`host: "127.0.0.1",
+	    host: 'superone-game-royal.jlnwgb.ng.0001.euw2.cache.amazonaws.com'
+
+
         }
     }
 );
@@ -59,8 +63,11 @@ function convertImageToBase64(url) {
 
 async function getImageString() {
    const data =  await convertImageToBase64(url);
-   await setData('world_cup_missing_image', data.data);
+   await setData('game_image_missing_image_parent_tag_5', data.data);
 }
+
+//missing_image_parent_tag_5
+
 getImageString()
 // async function convertIntoBase4(url) {
 //     const response = await fetch(url);
